@@ -1,0 +1,8 @@
+MONGDB.md
+HOMEBREW.md
+misc/
+**/node_modules/
+package**
+example1/
+.env
+.git
