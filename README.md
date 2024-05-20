@@ -1,6 +1,17 @@
 # Addison Liquors App
 - A stateful application to store USER information for Parking Reservations across the Cubs Season and other Wrigley Field Events. Standalone VM not production ready.
 
+## Folder Structure:
+- Each route should be inside of it's own folder, except index route. Never goes inside of its' own folder.
+TODO Make a cool folder tree
+- Partials: Where we put template files not related to roots. Allows you to break EJS files into smaller files, and to import them into other files multiple times. Shortens code.
+
+## Heroku
+- This will tell you error messages while app is running. 
+``` bash
+heroku logs --tail --app YOUR_APP_NAME
+```
+
 ## Google Compute Engine Free Tier
 |Title|Description|
 |---------------|-----------|
@@ -40,12 +51,13 @@ https://www.npmjs.com/package/mongoose
 
 
 ## Dependencies
-| Title                                                  | Description                                                 |
-|--------------------------------------------------------|-------------------------------------------------------------|
-| [Mongoose](https://www.npmjs.com/package/mongoose)     | Database software                                           |
-| [ejs](https://www.npmjs.com/package/mongoose)          | Templating Engine                                           |
-| [express-ejs-layouts]()                                | Database software                                           |
-| [express]()     | Database software                                           |
+| Title                                                   | Description                                                 |
+|---------------------------------------------------------|-------------------------------------------------------------|
+| [Mongoose](https://www.npmjs.com/package/mongoose)      | Database software                                           |
+| [ejs](https://www.npmjs.com/package/mongoose)           | Templating Engine                                           |
+| [express-ejs-layouts]()                                 | Database software                                           |
+| [express]()     | Database software                     |                                                             |
+| [body-parser](https://www.npmjs.com/package/body-parser)| Allows access of elements from server                       | 
 7
 
 ## Dev Dependencies
