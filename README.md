@@ -57,7 +57,9 @@ https://www.npmjs.com/package/mongoose
 | [ejs](https://www.npmjs.com/package/mongoose)           | Templating Engine                                           |
 | [express-ejs-layouts]()                                 | Database software                                           |
 | [express]()     | Database software                     |                                                             |
-| [body-parser](https://www.npmjs.com/package/body-parser)| Allows access of elements from server                       | 
+| [body-parser](https://www.npmjs.com/package/body-parser)| Allows access of elements from server                       |
+| [multer](https://www.npmjs.com/package/multer)          | Allows you to work with multi-part files forms              | 
+
 7
 
 ## Dev Dependencies
