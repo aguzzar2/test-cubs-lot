@@ -1,18 +1,8 @@
 const express = require('express')
-const multer = require('multer')
-const path = require('path') // node library
-const fs = require('fs') // node library
 const router = express.Router()
 const Book = require('../models/book') //Access to author 
 const Author = require('../models/author')
-const uploadPath = path.join('public', Book.coverImageBasePath)
 const imageMimeTypes = ['image/jpeg', 'image/png', 'image/gif'] // Fixed mime types
-const upload = multer({
-    dest: uploadPath,
-    fileFilter: (req, file, callback) => {
-        callback(null, imageMimeTypes.includes(file.mimetype))
-    }
-})
 
 // All Book Route
 router.get('/', async (req, res) => {
@@ -43,33 +33,24 @@ router.get('/new', async(req, res) => {
 })
 
 // Creating the Book
-router.post('/', upload.single('cover'), async (req, res) => {
-    const fileName = req.file != null ? req.file.filename : null
+router.post('/', async (req, res) => {
     const book = new Book({
         title: req.body.title,
         author: req.body.author,
         publishDate: new Date(req.body.publishDate), // some type magic
         pageCount: req.body.pageCount,
-        coverImageName: fileName,
         description: req.body.description
     })
+    saveCover(book, req.body.cover)
     try {
         const newBook = await book.save()
         res.redirect(`books`)
     } catch (error) {
-        if (book.coverImage != null){
-            removeBookCover(book.coverImage)
-        }
         console.error('Error creating book:', error)
         renderNewPage(res, book, true, error.message)
     }
 }) // Post for Creation
 
-async function removeBookCover(filename){
-    fs.unlink(path.join(uploadPath, filename), err => {
-        if (err) console.error(err)
-    })    
-}
 
 async function renderNewPage(res, book, hasError = false, errorMessage = '') {
     try {
@@ -86,6 +67,15 @@ async function renderNewPage(res, book, hasError = false, errorMessage = '') {
     } catch (error) {
         console.error('Error in renderNewPage:', error)
         res.redirect('/books')
+    }
+}
+
+function saveCover(book, coverEncoded) {
+    if (coverEncoded == null) return
+    const cover = JSON.parse(coverEncoded)
+    if (cover != null && imageMimeTypes.includes(cover.type)) {
+        book.coverImage = new Buffer.from(cover.data, 'base64') // convert to a buffer
+        book.coverImageType = cover.type
     }
 }
 

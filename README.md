@@ -43,6 +43,7 @@ heroku logs --tail --app YOUR_APP_NAME
 ![MVC](images/mvc.png)
 
 
+
 ## YouTube Video:
 | Title                                            | Description                                                       |
 | ------------------------------------------------ | ----------------------------------------------------------------- |
@@ -59,6 +60,7 @@ https://www.npmjs.com/package/mongoose
 | [express]()     | Database software                     |                                                             |
 | [body-parser](https://www.npmjs.com/package/body-parser)| Allows access of elements from server                       |
 | [multer](https://www.npmjs.com/package/multer)          | Allows you to work with multi-part files forms              | 
+| [filepond](https://pqina.nl/filepond/)                 | JS Library that can upload anything                                           |
 
 7
 
@@ -66,3 +68,15 @@ https://www.npmjs.com/package/mongoose
 | Title                                                  | Description                                                 |
 |--------------------------------------------------------|-------------------------------------------------------------|
 | [nodemon]()                                            | Automatically updates server after updating files           |
+
+## Cloud/Database/Libraries
+| Title                                                  | Description                                                                   |
+|--------------------------------------------------------|-------------------------------------------------------------------------------|
+| [Heroku](https://dashboard.heroku.com/apps)            | Platform as a Service. Run apps in cloud for free                             |
+| [MongoDb](https://www.mongodb.com/)                    | Document oriented DB program, popular with Node uses Schemas not SQL tables   |
+| [filepond](https://pqina.nl/filepond/)                 | JS Library that can upload anything                                           |
+
+## GitHub Repo's
+| Title                                                  | Description                                                 |
+|--------------------------------------------------------|-------------------------------------------------------------|
+|[filepond-github](https://github.com/pqina/filepond)    | JavaSript Library that handles variety of uploads           |
