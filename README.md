@@ -52,15 +52,16 @@ https://www.npmjs.com/package/mongoose
 
 
 ## Dependencies
-| Title                                                   | Description                                                 |
-|---------------------------------------------------------|-------------------------------------------------------------|
-| [Mongoose](https://www.npmjs.com/package/mongoose)      | Database software                                           |
-| [ejs](https://www.npmjs.com/package/mongoose)           | Templating Engine                                           |
-| [express-ejs-layouts]()                                 | Database software                                           |
-| [express]()     | Database software                     |                                                             |
-| [body-parser](https://www.npmjs.com/package/body-parser)| Allows access of elements from server                       |
-| [multer](https://www.npmjs.com/package/multer)          | Allows you to work with multi-part files forms              | 
-| [filepond](https://pqina.nl/filepond/)                 | JS Library that can upload anything                                           |
+| Title                                                             | Description                                                 |
+|-------------------------------------------------------------------|-------------------------------------------------------------|
+| [Mongoose](https://www.npmjs.com/package/mongoose)                | Database software                                           |
+| [ejs](https://www.npmjs.com/package/mongoose)                     | Templating Engine                                           |
+| [express-ejs-layouts]()                                           | Database software                                           |
+| [express]()     | Database software                               |                                                             |
+| [body-parser](https://www.npmjs.com/package/body-parser)          | Allows access of elements from server                       |
+| [multer](https://www.npmjs.com/package/multer)                    | Allows you to work with multi-part files forms              | 
+| [filepond](https://pqina.nl/filepond/)                            | JS Library that can upload anything                         |
+| [method-override](https://www.npmjs.com/package/method-override)  | Send POST form with special param to server                 |
 
 7
 

@@ -71,11 +71,15 @@ async function renderNewPage(res, book, hasError = false, errorMessage = '') {
 }
 
 function saveCover(book, coverEncoded) {
-    if (coverEncoded == null) return
-    const cover = JSON.parse(coverEncoded)
-    if (cover != null && imageMimeTypes.includes(cover.type)) {
-        book.coverImage = new Buffer.from(cover.data, 'base64') // convert to a buffer
-        book.coverImageType = cover.type
+    if (coverEncoded == null) return;
+    try {
+        const cover = JSON.parse(coverEncoded);
+        if (cover != null && imageMimeTypes.includes(cover.type)) {
+            book.coverImage = new Buffer.from(cover.data, 'base64'); // convert to a buffer
+            book.coverImageType = cover.type;
+        }
+    } catch (error) {
+        console.error('Error parsing cover data:', error);
     }
 }
 
