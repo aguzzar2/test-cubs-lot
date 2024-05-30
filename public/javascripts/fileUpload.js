@@ -1,16 +1,39 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Register FilePond plugins
+    FilePond.registerPlugin(
+        FilePondPluginImagePreview,
+        FilePondPluginImageResize,
+        FilePondPluginFileEncode
+    );
 
-FilePond.registerPlugin(
-    FilePondPluginImagePreview,
-    FilePondPluginImageResize,
-    FilePondPluginFileEncode
-) // Register FilePond Plugins
+    // Set FilePond options
+    FilePond.setOptions({
+        stylePanelAspectRatio: 150 / 100,
+        imageResizeTargetWidth: 100,
+        imageResizeTargetHeight: 150
+    });
 
-FilePond.setOptions({
-    stylePanelAspectRatio: 150 / 100,
-    imageResizeTargetWidth: 100,
-    imageResizeTargetHeight: 150
-})
+    // Initialize FilePond
+    const inputElement = document.querySelector('input[name="cover"]');
+    if (inputElement) {
+        FilePond.create(inputElement);
+    }
+});
 
 
 
-FilePond.parse(document.body);
+// FilePond.registerPlugin(
+//     FilePondPluginImagePreview,
+//     FilePondPluginImageResize,
+//     FilePondPluginFileEncode
+// ) // Register FilePond Plugins
+
+// FilePond.setOptions({
+//     stylePanelAspectRatio: 150 / 100,
+//     imageResizeTargetWidth: 100,
+//     imageResizeTargetHeight: 150
+// })
+
+
+
+// FilePond.parse(document.body);
